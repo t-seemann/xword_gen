@@ -1,49 +1,20 @@
-Notizen:
-
-Generell ist es Grid-artig:
-
-+--+--+--+--+--+--+--+--+
-|  |  |  |  |  |  |  |  |
-+--+--+--+--+--+--+--+--+
-|  |  |  |  |xx|  |  |  |
-+--+--+--+--+--+--+--+--+
-|xx|xx|xx|xx|xx|xx|  |  |
-+--+--+--+--+--+--+--+--+
-|  |  |  |  |xx|  |  |  |
-+--+--+--+--+--+--+--+--+
-|  |  |  |  |xx|  |  |  |
-+--+--+--+--+--+--+--+--+
-
-
-Vielleicht ist der einfachste Ansatz, ein generative:
-
-Pseudocode:
-'
-set_words = []
-
-direction = "vertical"
-
-while (queue.isNonEmpty)
-
-  word = queue.poll()
-  
-  if set_words = empty_set
-    set_words.add(word)
-  else
-    for w in set_words
-      if matchesCharater(word, w)
-        place(word, direction)
-        check_place_possible()
-        change_direction(direction)
-    
-    if not_placed
-      queue.add(word)
- 
-print(crossword) 
-
-  
-'
-
 # Algorithm:
 
+Brute-Force implementation.
+
+Try all the words in both orientations.
+
+It may happen that words can no longer be added. If this happens the incomplete grid is printed.
+Because some random choices are made, one can execute the code again and the grid should change.
+
+
+There are no guarantees that this code is working correctly.
+
+
+# How to use:
+
+
+python3 crossword.py [path-to-wordlist]
+
+The wordlist should be a file containing one word per line.
 
